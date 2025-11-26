@@ -1,13 +1,13 @@
 class_name Danger
 
-extends AnimatedSprite
+extends AnimatedSprite2D
 
 var hp = 100
-export var full_damage = 100
+@export var full_damage = 100
 
 
 func connect_area_signal(signal_name, method_name):
-	var error_code = get_node("area").connect(signal_name, self, method_name)
+	var error_code = get_node("area").connect(signal_name, Callable(self, method_name))
 	if error_code:
 		print("ERROR connecting signal :" + str(error_code))
 

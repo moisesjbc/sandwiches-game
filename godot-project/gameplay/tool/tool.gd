@@ -1,7 +1,7 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-onready var current_tool = null
-onready var current_tool_type = null
+@onready var current_tool = null
+@onready var current_tool_type = null
 var current_danger = false
 
 
@@ -32,7 +32,7 @@ func set_current_tool(new_tool, new_tool_type):
 
 
 func _input(event):
-	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			current_tool.play("on")
 			current_tool.get_node("audio").play()

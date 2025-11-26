@@ -6,48 +6,21 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[ {
-"base": "AnimatedSprite",
-"class": "Danger",
-"language": "GDScript",
-"path": "res://globals/types/danger.gd"
-}, {
-"base": "Reference",
-"class": "DangerType",
-"language": "GDScript",
-"path": "res://globals/types/danger_type.gd"
-}, {
-"base": "Reference",
-"class": "DangersManager",
-"language": "GDScript",
-"path": "res://globals/singletons/dangers_manager.gd"
-}, {
-"base": "Reference",
-"class": "ToolType",
-"language": "GDScript",
-"path": "res://globals/types/tool_type.gd"
-} ]
-_global_script_class_icons={
-"Danger": "",
-"DangerType": "",
-"DangersManager": "",
-"ToolType": ""
-}
+config_version=5
 
 [application]
 
 config/name="The sandwiches game"
-run/main_scene="res://gameplay/main/main.tscn"
+run/main_scene="uid://tcqv0817qg1w"
+config/features=PackedStringArray("4.5")
 config/icon="res://icon.png"
 
 [display]
 
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_width"
 window/size/width=1280
 window/size/height=720
-window/stretch/mode="2d"
-window/stretch/aspect="keep"
 
 [gui]
 
@@ -57,23 +30,23 @@ common/drop_mouse_on_gui_input_disabled=true
 
 tool_hand={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
- ]
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
 }
 tool_extinguisher={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
- ]
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
 }
 tool_lighter={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
- ]
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
 }
 tool_gavel={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":70,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
- ]
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
 }
 
 [physics]

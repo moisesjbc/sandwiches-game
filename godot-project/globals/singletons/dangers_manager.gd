@@ -13,7 +13,7 @@ func get_middle_point(baseline: Line2D):
 func generate_dangers(sandwich):
 	var sandwich_point = get_middle_point(sandwich.get_node("baseline"))
 	
-	var new_danger = _dangers[0].instance()
+	var new_danger = _dangers[0].instantiate()
 	var danger_point = get_middle_point(new_danger.get_node("baseline"))
 	
 	var danger_global_position = sandwich.global_position + sandwich_point - danger_point

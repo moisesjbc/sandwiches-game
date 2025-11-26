@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var sandwich_scene = preload("res://gameplay/sandwich/sandwich.tscn")
+@onready var sandwich_scene = preload("res://gameplay/sandwich/sandwich.tscn")
 
 
 func _ready():
@@ -8,7 +8,7 @@ func _ready():
 
 
 func spawn_sandwich():
-	var sandwich = sandwich_scene.instance()
+	var sandwich = sandwich_scene.instantiate()
 	$sandwiches.call_deferred("add_child", sandwich)
 	sandwich.global_position = $spawn_position.global_position
 
