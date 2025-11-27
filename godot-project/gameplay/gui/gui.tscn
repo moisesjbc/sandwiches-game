@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch8fm7pab6x5m"]
+
+[ext_resource type="Script" uid="uid://qccg7vcvmgyy" path="res://gameplay/gui/gui.gd" id="1_6vp4t"]
+[ext_resource type="Texture2D" uid="uid://vunyk2ovmnte" path="res://gameplay/gui/health.png" id="1_fn8ka"]
+[ext_resource type="FontFile" uid="uid://cx4sna3c8trki" path="res://globals/fonts/Ubuntu-B.ttf" id="3_q6c58"]
+
+[node name="gui" type="Node"]
+script = ExtResource("1_6vp4t")
+
+[node name="gui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="margin_container" type="MarginContainer" parent="gui"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="hbox_container" type="HBoxContainer" parent="gui/margin_container"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="health_texture" type="TextureRect" parent="gui/margin_container/hbox_container"]
+layout_mode = 2
+texture = ExtResource("1_fn8ka")
+
+[node name="health_label" type="Label" parent="gui/margin_container/hbox_container/health_texture"]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 174.0
+offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("3_q6c58")
+theme_override_font_sizes/font_size = 45
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
