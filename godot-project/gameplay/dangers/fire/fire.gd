@@ -1,6 +1,6 @@
 extends Danger
 
-@export var tool_damage_per_second = 100
+@export var tool_damage_per_second = 300
 
 func use_tool(used_tool_type, delta):
 	if used_tool_type == ToolType.EXTINGUISHER:
