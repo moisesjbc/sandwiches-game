@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch8fm7pab6x5m"]
+[gd_scene load_steps=13 format=3 uid="uid://ch8fm7pab6x5m"]
 
 [ext_resource type="Script" uid="uid://qccg7vcvmgyy" path="res://gameplay/gui/gui.gd" id="1_6vp4t"]
 [ext_resource type="Texture2D" uid="uid://vunyk2ovmnte" path="res://gameplay/gui/health.png" id="1_fn8ka"]
 [ext_resource type="FontFile" uid="uid://cx4sna3c8trki" path="res://globals/fonts/Ubuntu-B.ttf" id="3_q6c58"]
+[ext_resource type="Texture2D" uid="uid://b2ds2200b01ox" path="res://gameplay/gui/tools/hand_off.png" id="4_ukvlr"]
+[ext_resource type="Texture2D" uid="uid://b7847355t3dre" path="res://gameplay/gui/tools/hand_on.png" id="5_5u0en"]
+[ext_resource type="Texture2D" uid="uid://bdwqfp26838ch" path="res://gameplay/gui/tools/extinguisher_off.png" id="6_to63c"]
+[ext_resource type="Texture2D" uid="uid://cjt72sp4t6hha" path="res://gameplay/gui/tools/extinguisher_on.png" id="7_nju0n"]
+[ext_resource type="Texture2D" uid="uid://d0t55uhh6cgxi" path="res://gameplay/gui/tools/lighter_off.png" id="8_8ld1p"]
+[ext_resource type="Texture2D" uid="uid://byci3xnkpyb6t" path="res://gameplay/gui/tools/lighter_on.png" id="9_4o2tm"]
+[ext_resource type="Texture2D" uid="uid://b87dx6cgywial" path="res://gameplay/gui/tools/gavel_off.png" id="10_wqdgo"]
+[ext_resource type="Texture2D" uid="uid://kaoms8crqqmy" path="res://gameplay/gui/tools/gavel_on.png" id="11_oqyd5"]
+[ext_resource type="PackedScene" uid="uid://dbaxov7gayj0u" path="res://gameplay/tool/tool.tscn" id="12_oqyd5"]
 
 [node name="gui" type="Node"]
 script = ExtResource("1_6vp4t")
@@ -46,3 +55,116 @@ theme_override_font_sizes/font_size = 45
 text = "100"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="hbox_container" type="HBoxContainer" parent="gui"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="hand_button" type="TextureButton" parent="gui/hbox_container"]
+layout_mode = 2
+texture_normal = ExtResource("4_ukvlr")
+texture_pressed = ExtResource("5_5u0en")
+texture_disabled = ExtResource("5_5u0en")
+
+[node name="label" type="Label" parent="gui/hbox_container/hand_button"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -27.0
+offset_right = -8.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_q6c58")
+text = "A"
+horizontal_alignment = 2
+
+[node name="extinguisher_button" type="TextureButton" parent="gui/hbox_container"]
+layout_mode = 2
+texture_normal = ExtResource("6_to63c")
+texture_pressed = ExtResource("7_nju0n")
+texture_disabled = ExtResource("7_nju0n")
+
+[node name="label" type="Label" parent="gui/hbox_container/extinguisher_button"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -27.0
+offset_right = -8.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_q6c58")
+text = "S"
+horizontal_alignment = 2
+
+[node name="lighter_button" type="TextureButton" parent="gui/hbox_container"]
+layout_mode = 2
+texture_normal = ExtResource("8_8ld1p")
+texture_pressed = ExtResource("9_4o2tm")
+texture_disabled = ExtResource("9_4o2tm")
+
+[node name="label" type="Label" parent="gui/hbox_container/lighter_button"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -27.0
+offset_right = -8.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_q6c58")
+text = "D"
+horizontal_alignment = 2
+
+[node name="gavel_button" type="TextureButton" parent="gui/hbox_container"]
+layout_mode = 2
+texture_normal = ExtResource("10_wqdgo")
+texture_pressed = ExtResource("11_oqyd5")
+texture_disabled = ExtResource("11_oqyd5")
+
+[node name="label" type="Label" parent="gui/hbox_container/gavel_button"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -27.0
+offset_right = -8.0
+offset_bottom = -4.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_q6c58")
+text = "F"
+horizontal_alignment = 2
+
+[node name="tool" parent="." instance=ExtResource("12_oqyd5")]
+
+[connection signal="pressed" from="gui/hbox_container/hand_button" to="." method="_on_hand_button_pressed"]
+[connection signal="pressed" from="gui/hbox_container/extinguisher_button" to="." method="_on_extinguisher_button_pressed"]
+[connection signal="pressed" from="gui/hbox_container/lighter_button" to="." method="_on_lighter_button_pressed"]
+[connection signal="pressed" from="gui/hbox_container/gavel_button" to="." method="_on_gavel_button_pressed"]

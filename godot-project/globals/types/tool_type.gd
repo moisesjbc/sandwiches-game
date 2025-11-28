@@ -1,8 +1,8 @@
 class_name ToolType
 
 enum {
-	HAND,
-	EXTINGUISHER,
-	LIGHTER,
-	GAVEL
+	HAND = 0,
+	EXTINGUISHER = 1,
+	LIGHTER = 2,
+	GAVEL = 3
 }
