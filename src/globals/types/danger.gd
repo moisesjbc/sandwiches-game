@@ -3,8 +3,7 @@ class_name Danger
 extends AnimatedSprite2D
 
 var hp = 100
-@export var full_damage = 100
-
+var full_damage = 100
 
 func connect_area_signal(signal_name, method_name):
 	var error_code = get_node("area").connect(signal_name, Callable(self, method_name))
@@ -33,4 +32,4 @@ func _exit_tree():
 
 
 func damage():
-	get_node("/root/main").apply_damage(full_damage * (hp / 100))
+	get_node("/root/main").apply_damage(self.full_damage * (hp / 100))

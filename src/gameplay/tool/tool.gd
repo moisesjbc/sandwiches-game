@@ -45,6 +45,9 @@ func _input(event):
 		if event.pressed:
 			current_tool.play("on")
 			current_tool.get_node("audio").play()
+			
+			if current_danger and is_one_hit_tool(current_tool_type):
+				current_danger.use_tool(current_tool_type, 0)
 		else:
 			current_tool.play("off")
 			current_tool.get_node("audio").stop()

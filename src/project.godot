@@ -15,12 +15,20 @@ run/main_scene="uid://tcqv0817qg1w"
 config/features=PackedStringArray("4.5")
 config/icon="res://icon.png"
 
+[autoload]
+
+dangers_manager="*res://globals/singletons/dangers_manager.gd"
+
 [display]
 
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/size/width=1280
 window/size/height=720
+
+[global_group]
+
+dangers=""
 
 [gui]
 

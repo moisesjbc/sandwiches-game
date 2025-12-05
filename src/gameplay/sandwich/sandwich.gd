@@ -1,11 +1,10 @@
 extends CharacterBody2D
 
-@export var speed = 400
+@export var speed = 250
 
 
 func _ready():
-	var dangers_manager = DangersManager.new()
-	dangers_manager.generate_dangers(self)
+	get_node("/root/dangers_manager").generate_dangers(self)
 
 
 func _process(delta):

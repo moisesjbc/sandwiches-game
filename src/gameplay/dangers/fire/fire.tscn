@@ -864,7 +864,6 @@ sprite_frames = SubResource("67")
 animation = &"off"
 frame = 59
 script = ExtResource("2")
-full_damage = 30
 
 [node name="baseline" type="Line2D" parent="."]
 visible = false

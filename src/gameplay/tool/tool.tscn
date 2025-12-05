@@ -194,9 +194,6 @@ animations = [{
 "speed": 25.0
 }]
 
-[sub_resource type="CircleShape2D" id="4"]
-radius = 22.0227
-
 [sub_resource type="AtlasTexture" id="28"]
 atlas = ExtResource("1")
 region = Rect2(0, 768, 128, 128)
@@ -454,6 +451,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="4"]
+radius = 29.017237
+
 [node name="tool" type="CharacterBody2D" groups=["tools"]]
 script = ExtResource("2")
 
@@ -476,9 +476,6 @@ animation = &"on"
 [node name="audio" type="AudioStreamPlayer" parent="extinguisher"]
 stream = ExtResource("4")
 
-[node name="collision_shape" type="CollisionShape2D" parent="."]
-shape = SubResource("4")
-
 [node name="lighter" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(17, 28)
@@ -496,3 +493,6 @@ animation = &"on"
 
 [node name="audio" type="AudioStreamPlayer" parent="gavel"]
 stream = ExtResource("6")
+
+[node name="collision_shape" type="CollisionShape2D" parent="."]
+shape = SubResource("4")

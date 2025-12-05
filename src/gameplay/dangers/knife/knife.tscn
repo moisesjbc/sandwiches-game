@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://graavmpmt2tm"]
+
+[ext_resource type="Texture2D" uid="uid://c3uv6k6f5i2fy" path="res://gameplay/dangers/knife/knife_01.png" id="1_uu8oc"]
+[ext_resource type="Script" uid="uid://c4vsn0jorwkxc" path="res://gameplay/dangers/knife/knife.gd" id="2_f8qgm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8qgm"]
+atlas = ExtResource("1_uu8oc")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu8oc"]
+atlas = ExtResource("1_uu8oc")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8qgm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8qgm")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu8oc")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uu8oc"]
+size = Vector2(49, 115)
+
+[node name="knife" type="AnimatedSprite2D" groups=["dangers"]]
+sprite_frames = SubResource("SpriteFrames_f8qgm")
+animation = &"on"
+script = ExtResource("2_f8qgm")
+
+[node name="area" type="Area2D" parent="."]
+
+[node name="collision_shape" type="CollisionShape2D" parent="area"]
+position = Vector2(2.5, -6.5)
+shape = SubResource("RectangleShape2D_uu8oc")
+
+[node name="baseline" type="Line2D" parent="."]
+visible = false
+position = Vector2(2.4399977, 0)
+points = PackedVector2Array(-22.439999, 45, 22.560001, 45)
